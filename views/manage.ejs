@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KongRuksiam Shop</title>
+</head>
+
+<body>
+    <%-include('navbar')%>
+        <div class="container">
+            <h2>จัดการสินค้า</h2>
+            <p>เพิ่ม ลบ แก้ไขข้อมูลในฐานข้อมูล</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ชื่อสินค้า</th>
+                        <th>ราคา</th>
+                        <th>รายละเอียด</th>
+                        <th>ลบ</th>
+                        <th>แก้ไข</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Object.values(products).forEach(function(item){%>
+                        <tr>
+                            <td>
+                                <%= item.name%>
+                            </td>
+                            <td>
+                                <%= item.price%>
+                            </td>
+                            <td>
+                                <%= item.description%>
+                            </td>
+                            <td><a href="/delete/<%=item._id%>" class="btn btn-danger" onclick="return confirm('ต้องการลบสินค้าใช่หรือไม่ ?')">ลบ</a></td>
+                            <td><a href="/edit/<%=item._id%>" class="btn btn-primary">แก้ไข</a></td>
+                        </tr>
+                        <%})%>
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>

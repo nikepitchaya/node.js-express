@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>รายละเอียดสินค้า</title>
+</head>
+<style>
+    .image {
+        height: 400px;
+        width: 400px;
+    }
+
+    .content {
+        display: flex;
+        margin: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 40%;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+        padding: 2px 16px;
+    }
+</style>
+
+<body>
+    <%-include('navbar')%>
+        <div class="content">
+            <div class="card">
+                <img src="/images/products/<%=product.image%>" class="image">
+                <div class="container">
+                    <p>ชื่อสินค้า :<b>
+                            <%=product.name%>
+                        </b></p>
+                    <p>ราคา :<b>
+                            <%=product.price%>
+                        </b></p>
+                    <p>
+                        รายละเอียด :<b>
+                            <%=product.description%>
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

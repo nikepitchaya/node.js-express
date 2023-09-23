@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Nike.dev Manga Shop</h1>
+    <p>By <%= name %></p>
+    <p>Sponser By <%- sponser %></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error iusto debitis doloribus temporibus in, optio
+        reprehenderit veniam quaerat nostrum consectetur amet perferendis incidunt exercitationem consequatur eos nam
+        modi. Et, exercitationem?</p>
+    <a href="https://www.google.com">Link</a>
+    <a href="/product/1">Manga 1</a>
+    <a href="/product/2">Manga 2</a>
+    <a href="/product/3">Manga 3</a>
+    <hr>
+    <% if (cost>=10){%>
+        <p>You can enties</p>
+    <% }else {%>
+        <p>You can't get in</p>
+    <%} %> 
+    <hr>
+    <% for(i in product){%> 
+            <p><%= product[i]%></p>
+        <%}
+    %>
+    <hr>
+    
+</body>
+
+</html>
